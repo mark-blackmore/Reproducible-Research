@@ -39,7 +39,14 @@ library(mice)
 set.seed(1010)
 
 # 1. Code for reading in the dataset and/or processing the data
-activity <- read_csv("activity.csv")
+if (!file.exists("data")) {
+  dir.create("data")
+}
+fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
+#download.file(fileUrl, destfile = "./data/activity.zip")
+#unzip("./data/activity.zip")
+list.files("./data")
+activity <- read.csv("./data/activity.csv")
 activity
 str(activity)
 summary(activity)
