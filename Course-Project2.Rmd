@@ -52,7 +52,7 @@ if (!file.exists("data")) {
   dir.create("data")
 }
 download.file(url, destfile = "./data/StormData.csv")
-stormData <- read.csv("StormData.csv", stringsAsFactors = FALSE)
+stormData <- read.csv("./data/StormData.csv", stringsAsFactors = FALSE)
 ```
 
 ## Initial Processing Steps

@@ -43,10 +43,11 @@ if (!file.exists("data")) {
   dir.create("data")
 }
 fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
-#download.file(fileUrl, destfile = "./data/activity.zip")
-#unzip("./data/activity.zip")
-list.files("./data")
-activity <- read.csv("./data/activity.csv")
+temp <- tempfile()
+download.file(fileUrl,temp)
+activity <- read.csv(unz(temp, "activity.csv"))
+unlink(temp)
+
 activity
 str(activity)
 summary(activity)
