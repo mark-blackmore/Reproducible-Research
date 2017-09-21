@@ -3,5 +3,6 @@
 .RData
 .Ruserdata
 .csv
+./data/
 StormData.csv
 activity.csv
