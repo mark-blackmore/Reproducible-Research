@@ -39,8 +39,11 @@ forum_url <- "https://www.coursera.org/learn/reproducible-research/discussions/w
 exp_vars_url <- "https://rstudio-pubs-static.s3.amazonaws.com/58957_37b6723ee52b455990e149edde45e5b6.html"
 
 ### Download data and Import
-download.file(url, destfile = "StormData.csv")
-stormData <- read.csv("StormData.csv", stringsAsFactors = FALSE)
+if (!file.exists("data")) {
+  dir.create("data")
+}
+download.file(url, destfile = "./data/StormData.csv")
+stormData <- read.csv("./data/StormData.csv", stringsAsFactors = FALSE)
 ```
 
 ## Initial Processing Steps

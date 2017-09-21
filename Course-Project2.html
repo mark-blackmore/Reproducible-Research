@@ -172,8 +172,11 @@ forum_url &lt;- &quot;https://www.coursera.org/learn/reproducible-research/discu
 exp_vars_url &lt;- &quot;https://rstudio-pubs-static.s3.amazonaws.com/58957_37b6723ee52b455990e149edde45e5b6.html&quot;
 
 ### Download data and Import
-download.file(url, destfile = &quot;StormData.csv&quot;)
-stormData &lt;- read.csv(&quot;StormData.csv&quot;, stringsAsFactors = FALSE)</code></pre>
+if (!file.exists(&quot;data&quot;)) {
+  dir.create(&quot;data&quot;)
+}
+download.file(url, destfile = &quot;./data/StormData.csv&quot;)
+stormData &lt;- read.csv(&quot;./data/StormData.csv&quot;, stringsAsFactors = FALSE)</code></pre>
 </div>
 <div id="initial-processing-steps" class="section level2">
 <h2>Initial Processing Steps</h2>
